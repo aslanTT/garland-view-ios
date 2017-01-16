@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A2DE0DF1E2CD1DD00790122 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0DE1E2CD1DD00790122 /* AppDelegate.swift */; };
+		2A2DE0E11E2CD1DD00790122 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0E01E2CD1DD00790122 /* ViewController.swift */; };
+		2A2DE0E41E2CD1DD00790122 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DE0E21E2CD1DD00790122 /* Main.storyboard */; };
+		2A2DE0E61E2CD1DD00790122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DE0E51E2CD1DD00790122 /* Assets.xcassets */; };
+		2A2DE0E91E2CD1DD00790122 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A2DE0E71E2CD1DD00790122 /* LaunchScreen.storyboard */; };
+		2A2DE0F41E2CD1DD00790122 /* GarlandViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0F31E2CD1DD00790122 /* GarlandViewTests.swift */; };
+		2A2DE0FF1E2CD1DD00790122 /* GarlandViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2DE0FE1E2CD1DD00790122 /* GarlandViewUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2A2DE0F01E2CD1DD00790122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A2DE0D31E2CD1DC00790122 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A2DE0DA1E2CD1DC00790122;
+			remoteInfo = GarlandView;
+		};
+		2A2DE0FB1E2CD1DD00790122 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A2DE0D31E2CD1DC00790122 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2A2DE0DA1E2CD1DC00790122;
+			remoteInfo = GarlandView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2A2DE0DB1E2CD1DC00790122 /* GarlandView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GarlandView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2DE0DE1E2CD1DD00790122 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2A2DE0E01E2CD1DD00790122 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2A2DE0E31E2CD1DD00790122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2A2DE0E51E2CD1DD00790122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2A2DE0E81E2CD1DD00790122 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2A2DE0EA1E2CD1DD00790122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A2DE0EF1E2CD1DD00790122 /* GarlandViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarlandViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2DE0F31E2CD1DD00790122 /* GarlandViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarlandViewTests.swift; sourceTree = "<group>"; };
+		2A2DE0F51E2CD1DD00790122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2A2DE0FA1E2CD1DD00790122 /* GarlandViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GarlandViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2DE0FE1E2CD1DD00790122 /* GarlandViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GarlandViewUITests.swift; sourceTree = "<group>"; };
+		2A2DE1001E2CD1DD00790122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A2DE0D81E2CD1DC00790122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2DE0EC1E2CD1DD00790122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2DE0F71E2CD1DD00790122 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A2DE0D21E2CD1DC00790122 = {
+			isa = PBXGroup;
+			children = (
+				2A2DE0DD1E2CD1DC00790122 /* GarlandView */,
+				2A2DE0F21E2CD1DD00790122 /* GarlandViewTests */,
+				2A2DE0FD1E2CD1DD00790122 /* GarlandViewUITests */,
+				2A2DE0DC1E2CD1DC00790122 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A2DE0DC1E2CD1DC00790122 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DE0DB1E2CD1DC00790122 /* GarlandView.app */,
+				2A2DE0EF1E2CD1DD00790122 /* GarlandViewTests.xctest */,
+				2A2DE0FA1E2CD1DD00790122 /* GarlandViewUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A2DE0DD1E2CD1DC00790122 /* GarlandView */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DE0DE1E2CD1DD00790122 /* AppDelegate.swift */,
+				2A2DE0E01E2CD1DD00790122 /* ViewController.swift */,
+				2A2DE0E21E2CD1DD00790122 /* Main.storyboard */,
+				2A2DE0E51E2CD1DD00790122 /* Assets.xcassets */,
+				2A2DE0E71E2CD1DD00790122 /* LaunchScreen.storyboard */,
+				2A2DE0EA1E2CD1DD00790122 /* Info.plist */,
+			);
+			path = GarlandView;
+			sourceTree = "<group>";
+		};
+		2A2DE0F21E2CD1DD00790122 /* GarlandViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DE0F31E2CD1DD00790122 /* GarlandViewTests.swift */,
+				2A2DE0F51E2CD1DD00790122 /* Info.plist */,
+			);
+			path = GarlandViewTests;
+			sourceTree = "<group>";
+		};
+		2A2DE0FD1E2CD1DD00790122 /* GarlandViewUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2A2DE0FE1E2CD1DD00790122 /* GarlandViewUITests.swift */,
+				2A2DE1001E2CD1DD00790122 /* Info.plist */,
+			);
+			path = GarlandViewUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A2DE0DA1E2CD1DC00790122 /* GarlandView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A2DE1031E2CD1DD00790122 /* Build configuration list for PBXNativeTarget "GarlandView" */;
+			buildPhases = (
+				2A2DE0D71E2CD1DC00790122 /* Sources */,
+				2A2DE0D81E2CD1DC00790122 /* Frameworks */,
+				2A2DE0D91E2CD1DC00790122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GarlandView;
+			productName = GarlandView;
+			productReference = 2A2DE0DB1E2CD1DC00790122 /* GarlandView.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A2DE0EE1E2CD1DD00790122 /* GarlandViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A2DE1061E2CD1DD00790122 /* Build configuration list for PBXNativeTarget "GarlandViewTests" */;
+			buildPhases = (
+				2A2DE0EB1E2CD1DD00790122 /* Sources */,
+				2A2DE0EC1E2CD1DD00790122 /* Frameworks */,
+				2A2DE0ED1E2CD1DD00790122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A2DE0F11E2CD1DD00790122 /* PBXTargetDependency */,
+			);
+			name = GarlandViewTests;
+			productName = GarlandViewTests;
+			productReference = 2A2DE0EF1E2CD1DD00790122 /* GarlandViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2A2DE0F91E2CD1DD00790122 /* GarlandViewUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A2DE1091E2CD1DD00790122 /* Build configuration list for PBXNativeTarget "GarlandViewUITests" */;
+			buildPhases = (
+				2A2DE0F61E2CD1DD00790122 /* Sources */,
+				2A2DE0F71E2CD1DD00790122 /* Frameworks */,
+				2A2DE0F81E2CD1DD00790122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2A2DE0FC1E2CD1DD00790122 /* PBXTargetDependency */,
+			);
+			name = GarlandViewUITests;
+			productName = GarlandViewUITests;
+			productReference = 2A2DE0FA1E2CD1DD00790122 /* GarlandViewUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A2DE0D31E2CD1DC00790122 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Ramotion;
+				TargetAttributes = {
+					2A2DE0DA1E2CD1DC00790122 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5W3SMC6NDZ;
+						ProvisioningStyle = Automatic;
+					};
+					2A2DE0EE1E2CD1DD00790122 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5W3SMC6NDZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2A2DE0DA1E2CD1DC00790122;
+					};
+					2A2DE0F91E2CD1DD00790122 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 5W3SMC6NDZ;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2A2DE0DA1E2CD1DC00790122;
+					};
+				};
+			};
+			buildConfigurationList = 2A2DE0D61E2CD1DC00790122 /* Build configuration list for PBXProject "GarlandView" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2A2DE0D21E2CD1DC00790122;
+			productRefGroup = 2A2DE0DC1E2CD1DC00790122 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A2DE0DA1E2CD1DC00790122 /* GarlandView */,
+				2A2DE0EE1E2CD1DD00790122 /* GarlandViewTests */,
+				2A2DE0F91E2CD1DD00790122 /* GarlandViewUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2A2DE0D91E2CD1DC00790122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2DE0E91E2CD1DD00790122 /* LaunchScreen.storyboard in Resources */,
+				2A2DE0E61E2CD1DD00790122 /* Assets.xcassets in Resources */,
+				2A2DE0E41E2CD1DD00790122 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2DE0ED1E2CD1DD00790122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2DE0F81E2CD1DD00790122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A2DE0D71E2CD1DC00790122 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2DE0E11E2CD1DD00790122 /* ViewController.swift in Sources */,
+				2A2DE0DF1E2CD1DD00790122 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2DE0EB1E2CD1DD00790122 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2DE0F41E2CD1DD00790122 /* GarlandViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2A2DE0F61E2CD1DD00790122 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2DE0FF1E2CD1DD00790122 /* GarlandViewUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2A2DE0F11E2CD1DD00790122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A2DE0DA1E2CD1DC00790122 /* GarlandView */;
+			targetProxy = 2A2DE0F01E2CD1DD00790122 /* PBXContainerItemProxy */;
+		};
+		2A2DE0FC1E2CD1DD00790122 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2A2DE0DA1E2CD1DC00790122 /* GarlandView */;
+			targetProxy = 2A2DE0FB1E2CD1DD00790122 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2A2DE0E21E2CD1DD00790122 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A2DE0E31E2CD1DD00790122 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2A2DE0E71E2CD1DD00790122 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2A2DE0E81E2CD1DD00790122 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2A2DE1011E2CD1DD00790122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A2DE1021E2CD1DD00790122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2A2DE1041E2CD1DD00790122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5W3SMC6NDZ;
+				INFOPLIST_FILE = GarlandView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ramotion.GarlandView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		2A2DE1051E2CD1DD00790122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 5W3SMC6NDZ;
+				INFOPLIST_FILE = GarlandView/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ramotion.GarlandView;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		2A2DE1071E2CD1DD00790122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5W3SMC6NDZ;
+				INFOPLIST_FILE = GarlandViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ramotion.GarlandViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GarlandView.app/GarlandView";
+			};
+			name = Debug;
+		};
+		2A2DE1081E2CD1DD00790122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 5W3SMC6NDZ;
+				INFOPLIST_FILE = GarlandViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ramotion.GarlandViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GarlandView.app/GarlandView";
+			};
+			name = Release;
+		};
+		2A2DE10A1E2CD1DD00790122 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5W3SMC6NDZ;
+				INFOPLIST_FILE = GarlandViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ramotion.GarlandViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GarlandView;
+			};
+			name = Debug;
+		};
+		2A2DE10B1E2CD1DD00790122 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 5W3SMC6NDZ;
+				INFOPLIST_FILE = GarlandViewUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ramotion.GarlandViewUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = GarlandView;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A2DE0D61E2CD1DC00790122 /* Build configuration list for PBXProject "GarlandView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2DE1011E2CD1DD00790122 /* Debug */,
+				2A2DE1021E2CD1DD00790122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A2DE1031E2CD1DD00790122 /* Build configuration list for PBXNativeTarget "GarlandView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2DE1041E2CD1DD00790122 /* Debug */,
+				2A2DE1051E2CD1DD00790122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2A2DE1061E2CD1DD00790122 /* Build configuration list for PBXNativeTarget "GarlandViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2DE1071E2CD1DD00790122 /* Debug */,
+				2A2DE1081E2CD1DD00790122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2A2DE1091E2CD1DD00790122 /* Build configuration list for PBXNativeTarget "GarlandViewUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2DE10A1E2CD1DD00790122 /* Debug */,
+				2A2DE10B1E2CD1DD00790122 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A2DE0D31E2CD1DC00790122 /* Project object */;
+}
