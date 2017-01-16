@@ -1,0 +1,6 @@
+osx_image: xcode8
+language: objective-c
+
+xcode_project: GarlandView/GarlandView.xcodeproj
+xcode_scheme: GarlandView
+xcode_sdk: iphonesimulator
