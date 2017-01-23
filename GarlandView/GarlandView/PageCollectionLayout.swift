@@ -8,9 +8,14 @@
 
 import UIKit
 
+private typealias VisibleCells = (going: PageCollectionViewCell, coming: PageCollectionViewCell)
+
 public class PageCollectionLayout: UICollectionViewFlowLayout {
     
-    fileprivate var lastCollectionViewSize: CGSize = CGSize.zero
+    // MARK: - Properties
+    fileprivate var lastCollectionViewSize: CGSize = .zero
+    fileprivate var currentOffsetX: CGFloat = 0
+    fileprivate var lastOffsetX: CGFloat = 0
     
     var scalingOffset: CGFloat = 200
     var minimumScaleFactor: CGFloat = 0.95
@@ -29,11 +34,9 @@ extension PageCollectionLayout {
         guard let collectionView = self.collectionView else { return }
         
         if collectionView.bounds.size != lastCollectionViewSize {
-            self.configureInset()
             self.lastCollectionViewSize = collectionView.bounds.size
         }
     }
-    
     
     override open func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         guard let collectionView = self.collectionView else {
@@ -117,20 +120,29 @@ extension PageCollectionLayout {
         return newAttributesArray
     }
     
- 
 }
 
-// MARK: helpers
-
-extension PageCollectionLayout {
+// MARK: - Helers
+private extension PageCollectionLayout {
     
-    fileprivate func configureInset() -> Void {
-        guard let collectionView = self.collectionView else {
-            return
+    func visibleCells(for rect: CGRect, isScrolllingToRight: Bool) -> VisibleCells? {
+        guard
+            let collectionView = self.collectionView,
+            let attributes = layoutAttributesForElements(in: rect) else { return nil }
+        var cells: [PageCollectionViewCell] = []
+        for attribute in attributes {
+            let path = attribute.indexPath
+            guard let cell = collectionView.cellForItem(at: path) as? PageCollectionViewCell else { continue }
+            cells.append(cell)
         }
         
-        let inset = collectionView.bounds.size.width / 2 - itemSize.width / 2
-        collectionView.contentInset  = UIEdgeInsetsMake(0, inset, 0, inset)
-        collectionView.contentOffset = CGPoint(x: -inset, y: 0)
+        guard cells.count == 2 else { return nil }
+        
+        let coming = isScrolllingToRight ? cells[1] : cells[0]
+        let going = isScrolllingToRight ? cells[0] : cells[1]
+        
+        let visibleCells = VisibleCells(going: going, coming: coming)
+        return visibleCells
     }
+    
 }
