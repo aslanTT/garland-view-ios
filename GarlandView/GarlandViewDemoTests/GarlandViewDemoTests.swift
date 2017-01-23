@@ -1,15 +1,15 @@
 //
-//  GarlandViewTests.swift
-//  GarlandViewTests
+//  GarlandViewDemoTests.swift
+//  GarlandViewDemoTests
 //
-//  Created by Serhiy Vysotskiy on 1/16/17.
+//  Created by Abdurahim Jauzee on 23/01/2017.
 //  Copyright © 2017 Ramotion. All rights reserved.
 //
 
 import XCTest
-@testable import GarlandView
+@testable import GarlandViewDemo
 
-class GarlandViewTests: XCTestCase {
+class GarlandViewDemoTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

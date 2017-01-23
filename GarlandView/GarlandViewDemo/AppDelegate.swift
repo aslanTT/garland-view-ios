@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  GarlandView
+//  GarlandViewDemo
 //
-//  Created by Serhiy Vysotskiy on 1/16/17.
+//  Created by Abdurahim Jauzee on 23/01/2017.
 //  Copyright © 2017 Ramotion. All rights reserved.
 //
 
