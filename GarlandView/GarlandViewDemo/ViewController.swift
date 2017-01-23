@@ -11,25 +11,20 @@ import GarlandView
 
 class ViewController: UIViewController {
     
-    @IBOutlet var collectionView: CollectionView!
+    @IBOutlet var collectionView: UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let flowLayout = PageCollectionLayout()
-        let maxHeight: CGFloat = collectionView.bounds.height
-        let maxWidth = UIScreen.main.bounds.width
-        let itemWidth = maxWidth * 0.8
-        let itemSpacing = maxWidth * 0.2
+        let itemHeight = collectionView.bounds.height
+        let itemWidth = collectionView.bounds.width
         
-        flowLayout.itemSize = CGSize(width: itemWidth, height: maxHeight)
+        flowLayout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         flowLayout.scrollDirection = .horizontal
-        flowLayout.minimumLineSpacing = itemSpacing
-        flowLayout.minimumInteritemSpacing = itemSpacing
-        flowLayout.sectionInset = UIEdgeInsets(top: 15,
-                                               left: itemSpacing / 2,
-                                               bottom: 15,
-                                               right: itemSpacing / 2)
+        flowLayout.sectionInset = .zero
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 0
 
         collectionView.collectionViewLayout = flowLayout
     }

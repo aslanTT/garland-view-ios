@@ -29,9 +29,13 @@ class VerticalStackLayout: UICollectionViewFlowLayout {
         let itemSpacing = maxWidth * 0.2
         
         itemSize = CGSize(width: itemWidth, height: maxHeight)
-        sectionInset = UIEdgeInsets(top: 7.5, left: itemSpacing / 2, bottom: 7.5, right: itemSpacing / 2)
         scrollDirection = .vertical
         sectionInset = .zero
+        minimumInteritemSpacing = itemSpacing / 2
+        minimumLineSpacing = itemSpacing / 2
+    }
+    
+}
     }
     
 }
