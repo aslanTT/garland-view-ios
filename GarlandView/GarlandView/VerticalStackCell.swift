@@ -17,6 +17,7 @@ class VerticalStackCell: UICollectionViewCell {
         super.init(frame: frame)
         infoLabel.textAlignment = .center
         infoLabel.numberOfLines = 0
+        infoLabel.textColor = .white
         contentView.addSubview(infoLabel)
         clipsToBounds = false
     }

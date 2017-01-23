@@ -33,7 +33,7 @@ public class PageCollectionViewCell: UICollectionViewCell {
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(VerticalStackCell.self)
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = UIColor.random
         collectionView.clipsToBounds = false
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.addSubview(collectionView)
@@ -107,8 +107,8 @@ extension PageCollectionViewCell: UICollectionViewDelegate, UICollectionViewData
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeue(VerticalStackCell.self, for: indexPath)
-        cell.contentView.backgroundColor = indexPath.row % 2 == 0 ? #colorLiteral(red: 0.5683954358, green: 0.8634789586, blue: 0.9851445556, alpha: 1) : #colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1)
         cell.infoLabel.text = "row #\(indexPath.row + 1)"
+        cell.contentView.backgroundColor = .random
         return cell
     }
     

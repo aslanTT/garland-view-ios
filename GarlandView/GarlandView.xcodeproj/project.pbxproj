@@ -25,6 +25,7 @@
 		9D46CC911E3603FF00863297 /* VerticalStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D209E381E32B38A0058B040 /* VerticalStackLayout.swift */; };
 		9D46CC921E36040100863297 /* VerticalStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF1D9CB1E322DD500D19B13 /* VerticalStackCell.swift */; };
 		9D46CC931E36088200863297 /* GarlandView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D46CC421E35F66700863297 /* GarlandView.framework */; };
+		9D46CC951E36359400863297 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D46CC941E36359400863297 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		9D46CC871E35FA4C00863297 /* UIEdgeInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIEdgeInsets.swift; path = Extensions/UIEdgeInsets.swift; sourceTree = "<group>"; };
 		9D46CC881E35FA4C00863297 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableView.swift; path = Extensions/UITableView.swift; sourceTree = "<group>"; };
 		9D46CC8D1E3602A700863297 /* CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		9D46CC941E36359400863297 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		9D5411D91E31D36500F1CBA4 /* PageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionViewCell.swift; sourceTree = "<group>"; };
 		9DF1D9CB1E322DD500D19B13 /* VerticalStackCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalStackCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,6 +190,7 @@
 				9D46CC861E35FA4C00863297 /* UICollectionView.swift */,
 				9D46CC871E35FA4C00863297 /* UIEdgeInsets.swift */,
 				9D46CC881E35FA4C00863297 /* UITableView.swift */,
+				9D46CC941E36359400863297 /* UIColor.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				9D46CC8F1E3603FB00863297 /* PageCollectionLayout.swift in Sources */,
 				9D46CC921E36040100863297 /* VerticalStackCell.swift in Sources */,
 				9D46CC8B1E35FA4C00863297 /* UIEdgeInsets.swift in Sources */,
+				9D46CC951E36359400863297 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
