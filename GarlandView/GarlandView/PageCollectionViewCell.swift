@@ -27,13 +27,15 @@ public class PageCollectionViewCell: UICollectionViewCell {
     
     func commonInit() {
         backgroundColor = .clear
+        clipsToBounds = false
+        contentView.clipsToBounds = false
         collectionView = UICollectionView(frame: bounds, collectionViewLayout: VerticalStackLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(VerticalStackCell.self)
-        collectionView.backgroundColor = UIColor.random
+        collectionView.backgroundColor = UIColor.white
         collectionView.clipsToBounds = false
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.addSubview(collectionView)
@@ -52,35 +54,28 @@ public class PageCollectionViewCell: UICollectionViewCell {
     }
     
     var visibleCells: [VerticalStackCell] {
-        return (collectionView.visibleCells as? [VerticalStackCell] ?? []).sorted { $0.frame.origin.y < $1.frame.origin.y
-        }
+        return (collectionView.visibleCells as? [VerticalStackCell] ?? []).sorted { $0.frame.origin.y < $1.frame.origin.y }
     }
     
-    func animateVisibleCells(newOffset: CGFloat) {
+    func animateVisibleCells(newOffset: CGFloat, comingCell: Bool) {
         let goingToRight = newOffset < 0
         
         let maxWidth = collectionView.bounds.width
-        let completed = Int(abs(newOffset) * 100 / (maxWidth/2))
+        let completed = Int(abs(newOffset) * 100 / (maxWidth/3))
         
         let cells = visibleCells
         
-        let multiplier = CGFloat(goingToRight ? completed : -completed) / 1.5
-        
         var index = CGFloat(cells.count)
         for cell in cells {
-            let x = multiplier * index
-            var scale = CGFloat(max(0.2, Double(completed)/100))
-            if scale > 1.0 { scale = 1.0 }
+            var x = CGFloat((goingToRight ? completed : -completed)) * index
             
-            
-//            var frame = cell.frame
-//            frame.origin.x = frame.origin.x + x / 2
-//            cell.frame = frame
+            if comingCell && index == CGFloat(cells.count) {
+                x = x * 1.5
+            }
             
             cell.transform = CGAffineTransform(translationX: x, y: 0)
-                //.scaledBy(x: scale, y: scale)
-            
-            cell.infoLabel.text = "offset: \(newOffset)\ncompletion:\(completed)\nto right:\(goingToRight)"
+//                .scaledBy(x: <#T##CGFloat#>, y: <#T##CGFloat#>)
+            cell.infoLabel.text = "offset: \(newOffset)\ncompletion:\(completed)\nto right: \(goingToRight)\ntranslationX: \(x)\nis coming: \(comingCell)"
             index -= 1
         }
     }

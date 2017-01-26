@@ -36,6 +36,14 @@ class VerticalStackLayout: UICollectionViewFlowLayout {
     }
     
 }
+
+
+// MARK: - Layout
+extension VerticalStackLayout {
+    
+    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        print(self.classForCoder, #function, newBounds)
+        return super.shouldInvalidateLayout(forBoundsChange: newBounds)
     }
     
 }

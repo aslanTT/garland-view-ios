@@ -17,6 +17,11 @@ public class PageCollectionLayout: UICollectionViewFlowLayout {
     fileprivate var currentOffsetX: CGFloat = 0
     fileprivate var lastOffsetX: CGFloat = 0
     
+    fileprivate var cameCell: PageCollectionViewCell?
+    fileprivate var goneCell: PageCollectionViewCell?
+    
+    fileprivate var shouldListenToBoundsChange = true
+    
     var scalingOffset: CGFloat = 200
     var minimumScaleFactor: CGFloat = 0.95
     var minimumAlphaFactor: CGFloat = 0.4
@@ -39,6 +44,16 @@ extension PageCollectionLayout {
     }
     
     override open func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
+//        print(#function, proposedContentOffset, velocity)
+        lastOffsetX = proposedContentOffset.x
+        
+//        let width = UIScreen.main.bounds.width
+//        let offset = CGPoint(x: proposedContentOffset.x + width, y: 0)
+        
+        return proposedContentOffset
+        
+        
+        /*
         guard let collectionView = self.collectionView else {
             return proposedContentOffset
         }
@@ -79,15 +94,49 @@ extension PageCollectionLayout {
         }
         
         return CGPoint(x: newOffsetX, y: proposedContentOffset.y)
+        */
     }
     
     
     override open func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+        print(#function, newBounds)
+        
+        let scrollingToRight = newBounds.minX > currentOffsetX
+        currentOffsetX = newBounds.minX
+        
+        if shouldListenToBoundsChange {
+            let newOffset = newBounds.minX - lastOffsetX
+            
+            if let visibleCells = visibleCells(for: newBounds, isScrolllingToRight: scrollingToRight) {
+                visibleCells.coming.animateVisibleCells(newOffset: newOffset, comingCell: true)
+                visibleCells.going.animateVisibleCells(newOffset: newOffset, comingCell: false)
+            }
+            
+//            if abs(newOffset) >= 100 {
+//                guard let collectionView = self.collectionView else { return true }
+//                shouldListenToBoundsChange = false
+//                
+//                let width = collectionView.bounds.width
+//                let newOffsetX = scrollingToRight ? lastOffsetX - width : lastOffsetX + width
+//                let newOffset = CGPoint(x: newOffsetX, y: 0)
+//                collectionView.setContentOffset(newOffset, animated: true)
+//            }
+        }
+        
+        guard let width = collectionView?.bounds.width else { return true }
+        if newBounds.minX.truncatingRemainder(dividingBy: width) == 0 {
+            print("END SCROLLING")
+//            shouldListenToBoundsChange = true
+            cameCell?.resetVisibleCells(animated: true)
+            goneCell?.resetVisibleCells(animated: false)
+        }
+        
         return true
     }
     
-    
+    /*
     override open func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+//        print(#function, rect)
         guard let collectionView = self.collectionView,
             let superAttributes = super.layoutAttributesForElements(in: rect) else {
                 return super.layoutAttributesForElements(in: rect)
@@ -119,6 +168,7 @@ extension PageCollectionLayout {
         
         return newAttributesArray
     }
+    */
     
 }
 
@@ -140,6 +190,8 @@ private extension PageCollectionLayout {
         
         let coming = isScrolllingToRight ? cells[1] : cells[0]
         let going = isScrolllingToRight ? cells[0] : cells[1]
+        cameCell = coming
+        goneCell = going
         
         let visibleCells = VisibleCells(going: going, coming: coming)
         return visibleCells

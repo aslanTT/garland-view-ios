@@ -20,6 +20,7 @@ class VerticalStackCell: UICollectionViewCell {
         infoLabel.textColor = .white
         contentView.addSubview(infoLabel)
         clipsToBounds = false
+        contentView.clipsToBounds = false
     }
     
     required init?(coder aDecoder: NSCoder) {
