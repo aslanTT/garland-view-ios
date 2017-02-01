@@ -22,6 +22,10 @@ public class PageCollectionLayout: UICollectionViewFlowLayout {
     
     fileprivate var shouldListenToBoundsChange = true
     
+    fileprivate var maxOffset: CGFloat {
+        return UIScreen.main.bounds.width / 2
+    }
+    
     var scalingOffset: CGFloat = 200
     var minimumScaleFactor: CGFloat = 0.95
     var minimumAlphaFactor: CGFloat = 0.4
@@ -44,12 +48,7 @@ extension PageCollectionLayout {
     }
     
     override open func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
-//        print(#function, proposedContentOffset, velocity)
         lastOffsetX = proposedContentOffset.x
-        
-//        let width = UIScreen.main.bounds.width
-//        let offset = CGPoint(x: proposedContentOffset.x + width, y: 0)
-        
         return proposedContentOffset
         
         
@@ -105,33 +104,55 @@ extension PageCollectionLayout {
         currentOffsetX = newBounds.minX
         
         if shouldListenToBoundsChange {
-            let newOffset = newBounds.minX - lastOffsetX
-            
             if let visibleCells = visibleCells(for: newBounds, isScrolllingToRight: scrollingToRight) {
                 visibleCells.coming.animateVisibleCells(newOffset: newOffset, comingCell: true)
                 visibleCells.going.animateVisibleCells(newOffset: newOffset, comingCell: false)
             }
-            
-//            if abs(newOffset) >= 100 {
-//                guard let collectionView = self.collectionView else { return true }
-//                shouldListenToBoundsChange = false
-//                
-//                let width = collectionView.bounds.width
-//                let newOffsetX = scrollingToRight ? lastOffsetX - width : lastOffsetX + width
-//                let newOffset = CGPoint(x: newOffsetX, y: 0)
-//                collectionView.setContentOffset(newOffset, animated: true)
-//            }
         }
+        
+        
+        // Tried to reset collection view scroll if offset reach max value
+        /*
+        guard let collection = collectionView else { return true }
+        let offset = scrollingToRight ? newBounds.minX : newBounds.maxX
+        let offsetCompletion = offset * 100 / maxOffset
+        if offsetCompletion >= 95, shouldListenToBoundsChange {
+            let newOffsetX = scrollingToRight ? lastOffsetX + collection.bounds.width : lastOffsetX - collection.bounds.width
+            lastOffsetX = min(max(newOffsetX, 0), collection.contentSize.width)
+            let newOffset = CGPoint(x: newOffsetX, y: 0)
+            
+            print(#function, "New Offset:", newOffset)
+            
+            shouldListenToBoundsChange = false
+            collection.panGestureRecognizer.isEnabled = false
+            collection.alwaysBounceHorizontal = false
+            collection.setContentOffset(newOffset, animated: true)
+            
+//            let rect = CGRect(x: newOffset.x, y: 0, width: collection.bounds.width, height: collection.bounds.height)
+//            collection.scrollRectToVisible(rect, animated: true)
+            
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                collection.panGestureRecognizer.isEnabled = true
+                collection.alwaysBounceHorizontal = true
+                self.shouldListenToBoundsChange = true
+            })
+            
+            return false
+        }
+        */
+        
         
         guard let width = collectionView?.bounds.width else { return true }
         if newBounds.minX.truncatingRemainder(dividingBy: width) == 0 {
-            print("END SCROLLING")
+            print("SCROLLING ENDED")
 //            shouldListenToBoundsChange = true
-            cameCell?.resetVisibleCells(animated: true)
-            goneCell?.resetVisibleCells(animated: false)
+//            cameCell?.resetVisibleCells(animated: true)
+//            goneCell?.resetVisibleCells(animated: false)
         }
         
-        return true
+        return !shouldListenToBoundsChange
     }
     
     /*

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D3B2FA31E4118DE008F8561 /* GarlandView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D46CC421E35F66700863297 /* GarlandView.framework */; };
+		9D3B2FA41E4118DE008F8561 /* GarlandView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D46CC421E35F66700863297 /* GarlandView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9D46CC561E35F8C700863297 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D46CC551E35F8C700863297 /* AppDelegate.swift */; };
 		9D46CC581E35F8C700863297 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D46CC571E35F8C700863297 /* ViewController.swift */; };
 		9D46CC5B1E35F8C700863297 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D46CC591E35F8C700863297 /* Main.storyboard */; };
@@ -23,11 +25,17 @@
 		9D46CC901E3603FD00863297 /* PageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5411D91E31D36500F1CBA4 /* PageCollectionViewCell.swift */; };
 		9D46CC911E3603FF00863297 /* VerticalStackLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D209E381E32B38A0058B040 /* VerticalStackLayout.swift */; };
 		9D46CC921E36040100863297 /* VerticalStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF1D9CB1E322DD500D19B13 /* VerticalStackCell.swift */; };
-		9D46CC931E36088200863297 /* GarlandView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D46CC421E35F66700863297 /* GarlandView.framework */; };
 		9D46CC951E36359400863297 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D46CC941E36359400863297 /* UIColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9D3B2FA51E4118DE008F8561 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2A2DE0D31E2CD1DC00790122 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D46CC411E35F66700863297;
+			remoteInfo = GarlandView;
+		};
 		9D46CC671E35F8C700863297 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 2A2DE0D31E2CD1DC00790122 /* Project object */;
@@ -43,6 +51,20 @@
 			remoteInfo = GarlandViewDemo;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9D3B2FA71E4118DE008F8561 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9D3B2FA41E4118DE008F8561 /* GarlandView.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9D209E361E328ADE0058B040 /* PageCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageCollectionLayout.swift; sourceTree = "<group>"; };
@@ -84,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D46CC931E36088200863297 /* GarlandView.framework in Frameworks */,
+				9D3B2FA31E4118DE008F8561 /* GarlandView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,10 +253,12 @@
 				9D46CC4F1E35F8C700863297 /* Sources */,
 				9D46CC501E35F8C700863297 /* Frameworks */,
 				9D46CC511E35F8C700863297 /* Resources */,
+				9D3B2FA71E4118DE008F8561 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9D3B2FA61E4118DE008F8561 /* PBXTargetDependency */,
 			);
 			name = GarlandViewDemo;
 			productName = GarlandViewDemo;
@@ -412,6 +436,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9D3B2FA61E4118DE008F8561 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9D46CC411E35F66700863297 /* GarlandView */;
+			targetProxy = 9D3B2FA51E4118DE008F8561 /* PBXContainerItemProxy */;
+		};
 		9D46CC681E35F8C700863297 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9D46CC521E35F8C700863297 /* GarlandViewDemo */;
@@ -589,6 +618,7 @@
 		9D46CC791E35F8C700863297 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2VFCBFYPFW;
 				INFOPLIST_FILE = GarlandViewDemo/Info.plist;
@@ -602,6 +632,7 @@
 		9D46CC7A1E35F8C700863297 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2VFCBFYPFW;
 				INFOPLIST_FILE = GarlandViewDemo/Info.plist;

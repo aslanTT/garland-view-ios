@@ -27,13 +27,11 @@ class ViewController: UIViewController {
         flowLayout.minimumLineSpacing = 0
 
         collectionView.collectionViewLayout = flowLayout
+        collectionView.bounces = false
+        collectionView.backgroundColor = UIColor.clear
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
+    
 
 }
 

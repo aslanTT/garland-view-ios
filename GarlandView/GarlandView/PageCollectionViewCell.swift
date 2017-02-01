@@ -27,30 +27,23 @@ public class PageCollectionViewCell: UICollectionViewCell {
     
     func commonInit() {
         backgroundColor = .clear
+        contentView.backgroundColor = .clear
         clipsToBounds = false
+        layer.masksToBounds = false
         contentView.clipsToBounds = false
+        contentView.layer.masksToBounds = false
+        
         collectionView = UICollectionView(frame: bounds, collectionViewLayout: VerticalStackLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.register(VerticalStackCell.self)
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = .clear
         collectionView.clipsToBounds = false
+        collectionView.layer.masksToBounds = false
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         contentView.addSubview(collectionView)
-        
-        /*
-        tableView = UITableView()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.separatorStyle = .none
-        tableView.allowsSelection = false
-        tableView.showsVerticalScrollIndicator = false
-        tableView.register(StackCardCell.self)
-        tableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        contentView.addSubview(tableView)
-        */
     }
     
     var visibleCells: [VerticalStackCell] {
@@ -58,25 +51,27 @@ public class PageCollectionViewCell: UICollectionViewCell {
     }
     
     func animateVisibleCells(newOffset: CGFloat, comingCell: Bool) {
+        let maxOffset = UIScreen.main.bounds.width / 2
+        let completionPercent = abs(newOffset) * 100 / maxOffset
+        
         let goingToRight = newOffset < 0
         
         let maxWidth = collectionView.bounds.width
-        let completed = Int(abs(newOffset) * 100 / (maxWidth/3))
-        
         let cells = visibleCells
         
-        var index = CGFloat(cells.count)
+        var alpha = max(0.2, 1 * completionPercent / 100)
+        if !comingCell {
+            alpha = max(0.2, abs(1.0 - alpha))
+        }
+        
+        var index: CGFloat = 1
         for cell in cells {
-            var x = CGFloat((goingToRight ? completed : -completed)) * index
-            
-            if comingCell && index == CGFloat(cells.count) {
-                x = x * 1.5
-            }
-            
+            let offsetX = goingToRight ? abs(newOffset) : -newOffset
+            let x = (offsetX/4) / index
+            print(x)
             cell.transform = CGAffineTransform(translationX: x, y: 0)
-//                .scaledBy(x: <#T##CGFloat#>, y: <#T##CGFloat#>)
-            cell.infoLabel.text = "offset: \(newOffset)\ncompletion:\(completed)\nto right: \(goingToRight)\ntranslationX: \(x)\nis coming: \(comingCell)"
-            index -= 1
+            cell.infoLabel.text = "offset: \(newOffset)\ncompletion: \(round(completionPercent))\nto right: \(goingToRight)\nis coming: \(comingCell)"
+            index += 2
         }
     }
     
@@ -85,9 +80,11 @@ public class PageCollectionViewCell: UICollectionViewCell {
             if animated {
                 UIView.animate(withDuration: 0.3) {
                     cell.transform = CGAffineTransform.identity
+                    cell.alpha = 1
                 }
             } else {
                 cell.transform = CGAffineTransform.identity
+                cell.alpha = 1
             }
         }
     }
